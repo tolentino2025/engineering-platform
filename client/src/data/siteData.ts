@@ -1,7 +1,7 @@
 /* ============================================================
    DESIGN: Dark Industrial Command Center
    COLOR: Cyan primary, Amber accent, Green-ops for compliance
-   FONT: Rajdhani (display), Outfit (body), Fira Code (mono)
+   FONT: Bebas Neue (display), DM Sans (body), JetBrains Mono (mono)
    ============================================================ */
 
 // Image URLs
