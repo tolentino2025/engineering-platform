@@ -146,7 +146,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">E-mail</div>
-                        <div className="text-sm text-muted-foreground">contato@engineeringplatform.com.br</div>
+                        <div className="text-sm text-muted-foreground">jonel@jonel.eng.br</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -155,7 +155,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">Telefone</div>
-                        <div className="text-sm text-muted-foreground">+55 (11) 3000-0000</div>
+                        <div className="text-sm text-muted-foreground">+55 (19) 3276-7313</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -164,7 +164,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">Localização</div>
-                        <div className="text-sm text-muted-foreground">São Paulo, SP — Brasil</div>
+                        <div className="text-sm text-muted-foreground">Campinas, SP — Brasil</div>
                       </div>
                     </div>
                   </div>

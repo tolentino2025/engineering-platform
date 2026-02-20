@@ -56,15 +56,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail size={14} className="text-[oklch(0.58_0.22_25)]" />
-                contato@jonelengenharia.com.br
+                jonel@jonel.eng.br
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone size={14} className="text-[oklch(0.58_0.22_25)]" />
-                +55 (11) 3000-0000
+                +55 (19) 3276-7313
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin size={14} className="text-[oklch(0.58_0.22_25)] mt-0.5 shrink-0" />
-                São Paulo, SP — Brasil
+                Campinas, SP — Brasil
               </li>
             </ul>
           </div>
