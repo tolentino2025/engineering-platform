@@ -41,15 +41,15 @@ export default function Disciplines() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_195/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">Disciplinas Técnicas</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Disciplinas Técnicas</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
-                Vertentes de <span className="text-gradient-cyan">Engenharia</span>
+                Vertentes de <span className="text-gradient-red">Engenharia</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 Cada disciplina opera como uma vertical técnica independente, com metodologia própria,
@@ -88,10 +88,10 @@ export default function Disciplines() {
 
                 <ScrollReveal direction={isEven ? "right" : "left"} className={isEven ? "" : "lg:order-1"}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2.5 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.3)]">
-                      <Icon size={24} className="text-[oklch(0.75_0.15_195)]" />
+                    <div className="p-2.5 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.3)]">
+                      <Icon size={24} className="text-[oklch(0.58_0.22_25)]" />
                     </div>
-                    <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">
+                    <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">
                       Disciplina {String(idx + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -106,13 +106,13 @@ export default function Disciplines() {
                 <ScrollReveal delay={0}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-2 mb-4">
-                      <Wrench size={16} className="text-[oklch(0.75_0.15_195)]" />
+                      <Wrench size={16} className="text-[oklch(0.58_0.22_25)]" />
                       <h3 className="font-display text-base font-bold text-foreground uppercase tracking-wide">Tipos de Projeto</h3>
                     </div>
                     <ul className="space-y-2">
                       {disc.projectTypes.map((t) => (
                         <li key={t} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 size={12} className="text-[oklch(0.75_0.15_195)] mt-1 shrink-0" />
+                          <CheckCircle2 size={12} className="text-[oklch(0.58_0.22_25)] mt-1 shrink-0" />
                           {t}
                         </li>
                       ))}
@@ -164,7 +164,7 @@ export default function Disciplines() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {disc.stages.map((stage, i) => (
                       <div key={stage} className="flex items-start gap-3 p-3 rounded-sm bg-[oklch(0.14_0.01_270/0.5)]">
-                        <span className="font-mono text-lg font-bold text-[oklch(0.75_0.15_195/0.4)] shrink-0">
+                        <span className="font-mono text-lg font-bold text-[oklch(0.58_0.22_25/0.4)] shrink-0">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <span className="text-sm text-muted-foreground">{stage}</span>
@@ -204,7 +204,7 @@ export default function Disciplines() {
                     <Accordion type="single" collapsible className="w-full">
                       {disc.faqs.map((faq, i) => (
                         <AccordionItem key={i} value={`faq-${i}`} className="border-[oklch(0.25_0.01_270/0.5)]">
-                          <AccordionTrigger className="text-sm text-foreground hover:text-[oklch(0.75_0.15_195)] font-medium py-4">
+                          <AccordionTrigger className="text-sm text-foreground hover:text-[oklch(0.58_0.22_25)] font-medium py-4">
                             {faq.q}
                           </AccordionTrigger>
                           <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
@@ -221,7 +221,7 @@ export default function Disciplines() {
               <ScrollReveal className="mt-10 text-center">
                 <Link
                   href="/contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)] rounded-sm hover:bg-[oklch(0.8_0.15_195)] transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
                 >
                   Solicitar Proposta para {disc.title}
                   <ArrowRight size={16} />

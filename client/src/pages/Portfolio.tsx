@@ -42,15 +42,15 @@ export default function Portfolio() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_195/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">Portfólio de Projetos</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Portfólio de Projetos</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
-                Projetos <span className="text-gradient-cyan">Executados</span>
+                Projetos <span className="text-gradient-red">Executados</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 Cada projeto representa uma solução de engenharia completa, desde o diagnóstico técnico
@@ -72,7 +72,7 @@ export default function Portfolio() {
                 onClick={() => setActiveIndustry(ind)}
                 className={`px-4 py-2 text-sm font-medium rounded-sm transition-all ${
                   activeIndustry === ind
-                    ? "bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)]"
+                    ? "bg-[oklch(0.58_0.22_25)] text-white"
                     : "bg-[oklch(0.18_0.01_270)] text-muted-foreground hover:text-foreground border border-[oklch(0.25_0.01_270/0.5)]"
                 }`}
               >
@@ -116,7 +116,7 @@ export default function Portfolio() {
                         </div>
                         <div className="lg:col-span-2 p-6 lg:p-8">
                           <div className="flex flex-wrap gap-2 mb-3">
-                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)] text-[oklch(0.75_0.15_195)] rounded-sm">
+                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] text-[oklch(0.58_0.22_25)] rounded-sm">
                               {project.industry}
                             </span>
                             <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.8_0.16_75/0.2)] text-[oklch(0.8_0.16_75)] rounded-sm">
@@ -128,11 +128,11 @@ export default function Portfolio() {
                           </div>
                           <h3 className="font-display text-2xl font-bold text-foreground mb-2">{project.title}</h3>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                            <MapPin size={14} className="text-[oklch(0.75_0.15_195)]" />
+                            <MapPin size={14} className="text-[oklch(0.58_0.22_25)]" />
                             {project.location}
                           </div>
                           <p className="text-sm text-muted-foreground leading-relaxed mb-4">{project.overview}</p>
-                          <div className="flex items-center gap-2 text-sm font-medium text-[oklch(0.75_0.15_195)]">
+                          <div className="flex items-center gap-2 text-sm font-medium text-[oklch(0.58_0.22_25)]">
                             <span>{expandedProject === project.id ? "Recolher detalhes" : "Ver detalhes completos"}</span>
                             <motion.div
                               animate={{ rotate: expandedProject === project.id ? 180 : 0 }}
@@ -160,7 +160,7 @@ export default function Portfolio() {
                               <div className="space-y-6">
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Layers size={14} className="text-[oklch(0.75_0.15_195)]" />
+                                    <Layers size={14} className="text-[oklch(0.58_0.22_25)]" />
                                     Escopo
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.scope}</p>
@@ -174,14 +174,14 @@ export default function Portfolio() {
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Wrench size={14} className="text-[oklch(0.75_0.15_195)]" />
+                                    <Wrench size={14} className="text-[oklch(0.58_0.22_25)]" />
                                     Solução Aplicada
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.solution}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Wrench size={14} className="text-[oklch(0.75_0.15_195)]" />
+                                    <Wrench size={14} className="text-[oklch(0.58_0.22_25)]" />
                                     Metodologia de Execução
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.methodology}</p>

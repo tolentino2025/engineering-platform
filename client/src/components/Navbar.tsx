@@ -1,9 +1,9 @@
-/* DESIGN: Dark Industrial Command Center — Sticky navbar with backdrop blur */
+/* DESIGN: Dark Industrial Command Center — Jonel Engenharia branding + crimson red system */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { NAV_ITEMS } from "@/data/siteData";
+import { NAV_ITEMS, IMAGES } from "@/data/siteData";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,15 +33,13 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <div className="container flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
+          {/* Jonel Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-sm bg-[oklch(0.75_0.15_195/0.15)] border border-[oklch(0.75_0.15_195/0.3)] flex items-center justify-center group-hover:bg-[oklch(0.75_0.15_195/0.25)] transition-colors">
-              <span className="font-display text-lg font-bold text-[oklch(0.75_0.15_195)]">EP</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-display text-lg font-bold text-foreground tracking-wide">ENGINEERING</span>
-              <span className="font-display text-lg font-bold text-[oklch(0.75_0.15_195)] ml-1">PLATFORM</span>
-            </div>
+            <img
+              src={IMAGES.logo}
+              alt="Jonel Engenharia"
+              className="h-10 lg:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -52,7 +50,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
                   location === item.href
-                    ? "text-[oklch(0.75_0.15_195)] bg-[oklch(0.75_0.15_195/0.1)]"
+                    ? "text-[oklch(0.58_0.22_25)] bg-[oklch(0.58_0.22_25/0.1)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-[oklch(1_0_0/0.05)]"
                 }`}
               >
@@ -65,7 +63,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contato"
-              className="px-5 py-2.5 text-sm font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.13_0.01_270)] rounded-md hover:bg-[oklch(0.8_0.15_195)] transition-colors"
+              className="px-5 py-2.5 text-sm font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-md hover:bg-[oklch(0.50_0.20_25)] transition-colors"
             >
               Solicitar Proposta
             </Link>
@@ -104,7 +102,7 @@ export default function Navbar() {
                     href={item.href}
                     className={`flex items-center justify-between py-4 px-4 text-lg font-display font-semibold border-b border-[oklch(0.25_0.01_270/0.3)] ${
                       location === item.href
-                        ? "text-[oklch(0.75_0.15_195)]"
+                        ? "text-[oklch(0.58_0.22_25)]"
                         : "text-foreground"
                     }`}
                   >
@@ -121,7 +119,7 @@ export default function Navbar() {
               >
                 <Link
                   href="/contato"
-                  className="block w-full text-center px-6 py-4 text-lg font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.13_0.01_270)] rounded-md"
+                  className="block w-full text-center px-6 py-4 text-lg font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-md"
                 >
                   Solicitar Proposta
                 </Link>

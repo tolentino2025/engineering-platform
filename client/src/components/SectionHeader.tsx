@@ -14,9 +14,9 @@ export default function SectionHeader({ tag, title, description, align = "center
     <ScrollReveal className={`mb-12 lg:mb-16 ${align === "center" ? "text-center max-w-3xl mx-auto" : ""}`}>
       {tag && (
         <div className="inline-flex items-center gap-2 mb-4">
-          <span className="w-8 h-px bg-[oklch(0.75_0.15_195)]" />
-          <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">{tag}</span>
-          <span className="w-8 h-px bg-[oklch(0.75_0.15_195)]" />
+          <span className="w-8 h-px bg-[oklch(0.58_0.22_25)]" />
+          <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">{tag}</span>
+          <span className="w-8 h-px bg-[oklch(0.58_0.22_25)]" />
         </div>
       )}
       <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight ${light ? "text-foreground" : "text-foreground"}`}>

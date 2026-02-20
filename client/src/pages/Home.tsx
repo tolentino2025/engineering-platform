@@ -47,11 +47,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)]"
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]"
             >
-              <span className="w-2 h-2 rounded-full bg-[oklch(0.75_0.15_195)] animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">
-                Engineering Digital Platform
+              <span className="w-2 h-2 rounded-full bg-[oklch(0.58_0.22_25)] animate-pulse" />
+              <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">
+                Jonel Engenharia
               </span>
             </motion.div>
 
@@ -62,7 +62,7 @@ export default function Home() {
               className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] text-white mb-6"
             >
               Engenharia com{" "}
-              <span className="text-gradient-cyan">controle</span>,{" "}
+              <span className="text-gradient-red">controle</span>,{" "}
               <span className="text-gradient-amber">precisão</span>{" "}
               e rastreabilidade
             </motion.h1>
@@ -85,7 +85,7 @@ export default function Home() {
             >
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)] rounded-sm hover:bg-[oklch(0.8_0.15_195)] transition-all"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
               >
                 Solicitar Proposta
                 <ArrowRight size={18} />
@@ -112,7 +112,7 @@ export default function Home() {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ChevronDown size={20} className="text-[oklch(0.75_0.15_195)]" />
+            <ChevronDown size={20} className="text-[oklch(0.58_0.22_25)]" />
           </motion.div>
         </motion.div>
       </section>
@@ -124,7 +124,7 @@ export default function Home() {
             {STATS.map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 0.1} className="text-center lg:text-left">
                 <div className="relative p-6 rounded-sm glass-panel glow-border">
-                  <div className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[oklch(0.75_0.15_195)]">
+                  <div className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[oklch(0.58_0.22_25)]">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="mt-2 font-display text-base font-semibold text-foreground uppercase tracking-wide">
@@ -167,20 +167,20 @@ export default function Home() {
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.1_0.01_270)] via-[oklch(0.1_0.01_270/0.3)] to-transparent" />
-                        <div className="absolute top-4 left-4 p-2.5 rounded-sm bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.75_0.15_195/0.3)]">
-                          <Icon size={22} className="text-[oklch(0.75_0.15_195)]" />
+                        <div className="absolute top-4 left-4 p-2.5 rounded-sm bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.58_0.22_25/0.3)]">
+                          <Icon size={22} className="text-[oklch(0.58_0.22_25)]" />
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="p-6">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-[oklch(0.75_0.15_195)] transition-colors">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-[oklch(0.58_0.22_25)] transition-colors">
                           {disc.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                           {disc.shortDescription}
                         </p>
-                        <div className="flex items-center gap-2 text-sm font-medium text-[oklch(0.75_0.15_195)]">
+                        <div className="flex items-center gap-2 text-sm font-medium text-[oklch(0.58_0.22_25)]">
                           <span>Ver detalhes</span>
                           <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         </div>
@@ -205,14 +205,14 @@ export default function Home() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[oklch(0.75_0.15_195/0.3)] via-[oklch(0.75_0.15_195/0.15)] to-transparent" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[oklch(0.58_0.22_25/0.3)] via-[oklch(0.58_0.22_25/0.15)] to-transparent" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {PROCESS_STEPS.slice(0, 4).map((step, i) => (
                 <ScrollReveal key={step.id} delay={i * 0.1}>
                   <div className="relative p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="font-mono text-2xl font-bold text-[oklch(0.75_0.15_195/0.4)]">
+                      <span className="font-mono text-2xl font-bold text-[oklch(0.58_0.22_25/0.4)]">
                         {String(step.id).padStart(2, "0")}
                       </span>
                     </div>
@@ -228,7 +228,7 @@ export default function Home() {
                 <ScrollReveal key={step.id} delay={i * 0.1}>
                   <div className="relative p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="font-mono text-2xl font-bold text-[oklch(0.75_0.15_195/0.4)]">
+                      <span className="font-mono text-2xl font-bold text-[oklch(0.58_0.22_25/0.4)]">
                         {String(step.id).padStart(2, "0")}
                       </span>
                     </div>
@@ -242,7 +242,7 @@ export default function Home() {
             <ScrollReveal className="mt-10 text-center">
               <Link
                 href="/processo"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold border border-[oklch(0.75_0.15_195/0.3)] text-[oklch(0.75_0.15_195)] rounded-sm hover:bg-[oklch(0.75_0.15_195/0.1)] transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold border border-[oklch(0.58_0.22_25/0.3)] text-[oklch(0.58_0.22_25)] rounded-sm hover:bg-[oklch(0.58_0.22_25/0.1)] transition-all"
               >
                 Ver Processo Completo
                 <ArrowRight size={16} />
@@ -269,7 +269,7 @@ export default function Home() {
                 onClick={() => setActiveFilter(f)}
                 className={`px-4 py-2 text-sm font-medium rounded-sm transition-all ${
                   activeFilter === f
-                    ? "bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)]"
+                    ? "bg-[oklch(0.58_0.22_25)] text-white"
                     : "bg-[oklch(0.18_0.01_270)] text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -298,7 +298,7 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.1_0.01_270)] to-transparent" />
                       <div className="absolute bottom-4 left-4 flex gap-2">
-                        <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.3_0.01_270/0.5)] text-[oklch(0.75_0.15_195)] rounded-sm">
+                        <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.3_0.01_270/0.5)] text-[oklch(0.58_0.22_25)] rounded-sm">
                           {project.industry}
                         </span>
                         <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.3_0.01_270/0.5)] text-muted-foreground rounded-sm">
@@ -307,7 +307,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-[oklch(0.75_0.15_195)] transition-colors">
+                      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-[oklch(0.58_0.22_25)] transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -328,7 +328,7 @@ export default function Home() {
           <ScrollReveal className="mt-10 text-center">
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold border border-[oklch(0.75_0.15_195/0.3)] text-[oklch(0.75_0.15_195)] rounded-sm hover:bg-[oklch(0.75_0.15_195/0.1)] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold border border-[oklch(0.58_0.22_25/0.3)] text-[oklch(0.58_0.22_25)] rounded-sm hover:bg-[oklch(0.58_0.22_25/0.1)] transition-all"
             >
               Ver Todos os Projetos
               <ArrowRight size={16} />
@@ -455,17 +455,17 @@ export default function Home() {
 
       {/* ===== 8) FINAL STRONG CTA ===== */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.15_0.02_195)] via-[oklch(0.12_0.015_270)] to-[oklch(0.1_0.01_270)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.15_0.02_25)] via-[oklch(0.12_0.015_270)] to-[oklch(0.1_0.01_270)]" />
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[oklch(0.75_0.15_195/0.1)] rounded-full blur-[120px]" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[oklch(0.58_0.22_25/0.1)] rounded-full blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[oklch(0.8_0.16_75/0.08)] rounded-full blur-[120px]" />
         </div>
 
         <div className="relative container text-center">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">
+              <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">
                   Próximo Passo
                 </span>
               </div>
@@ -479,7 +479,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link
                   href="/contato"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)] rounded-sm hover:bg-[oklch(0.8_0.15_195)] transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
                 >
                   Solicitar Proposta Técnica
                   <ArrowRight size={18} />

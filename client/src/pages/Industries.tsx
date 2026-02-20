@@ -45,15 +45,15 @@ export default function Industries() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_195/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">Segmentos Industriais</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Segmentos Industriais</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
-                Indústrias <span className="text-gradient-cyan">Atendidas</span>
+                Indústrias <span className="text-gradient-red">Atendidas</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 Experiência em múltiplos segmentos industriais, cada um com seus requisitos específicos
@@ -85,12 +85,12 @@ export default function Industries() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.1_0.01_270)] via-[oklch(0.1_0.01_270/0.3)] to-transparent" />
-                      <div className="absolute top-4 left-4 p-2 rounded-sm bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.75_0.15_195/0.3)]">
-                        <Icon size={20} className="text-[oklch(0.75_0.15_195)]" />
+                      <div className="absolute top-4 left-4 p-2 rounded-sm bg-[oklch(0.13_0.01_270/0.8)] backdrop-blur-sm border border-[oklch(0.58_0.22_25/0.3)]">
+                        <Icon size={20} className="text-[oklch(0.58_0.22_25)]" />
                       </div>
                     </div>
                     <div className="p-5">
-                      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-[oklch(0.75_0.15_195)] transition-colors">
+                      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-[oklch(0.58_0.22_25)] transition-colors">
                         {ind.title}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{ind.description}</p>
@@ -146,8 +146,8 @@ export default function Industries() {
               return (
                 <ScrollReveal key={tool.title} delay={i * 0.1}>
                   <div className="flex items-start gap-4 p-6 rounded-sm glass-panel glow-border h-full">
-                    <div className="p-2.5 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)] shrink-0">
-                      <Icon size={22} className="text-[oklch(0.75_0.15_195)]" />
+                    <div className="p-2.5 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                      <Icon size={22} className="text-[oklch(0.58_0.22_25)]" />
                     </div>
                     <div>
                       <h3 className="font-display text-lg font-bold text-foreground mb-2">{tool.title}</h3>
@@ -203,7 +203,7 @@ export default function Industries() {
               {FAQS.map((faq, i) => (
                 <ScrollReveal key={i} delay={i * 0.03}>
                   <AccordionItem value={`faq-${i}`} className="border-[oklch(0.25_0.01_270/0.5)]">
-                    <AccordionTrigger className="text-base text-foreground hover:text-[oklch(0.75_0.15_195)] font-display font-semibold py-5 text-left">
+                    <AccordionTrigger className="text-base text-foreground hover:text-[oklch(0.58_0.22_25)] font-display font-semibold py-5 text-left">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
@@ -229,7 +229,7 @@ export default function Industries() {
             </p>
             <Link
               href="/contato"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)] rounded-sm hover:bg-[oklch(0.8_0.15_195)] transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
             >
               Solicitar Proposta
               <ArrowRight size={18} />

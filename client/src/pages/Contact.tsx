@@ -23,15 +23,15 @@ export default function Contact() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_195/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.75_0.15_195)]">Contato</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Contato</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
-                Fale <span className="text-gradient-cyan">Conosco</span>
+                Fale <span className="text-gradient-red">Conosco</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 Entre em contato para uma consulta técnica inicial. Vamos entender suas necessidades
@@ -67,7 +67,7 @@ export default function Contact() {
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.75_0.15_195/0.5)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors"
                           placeholder="Seu nome completo"
                         />
                       </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.75_0.15_195/0.5)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors"
                           placeholder="Nome da empresa"
                         />
                       </div>
@@ -87,7 +87,7 @@ export default function Contact() {
                         <input
                           type="email"
                           required
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.75_0.15_195/0.5)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors"
                           placeholder="seu@email.com"
                         />
                       </div>
@@ -95,7 +95,7 @@ export default function Contact() {
                         <label className="block text-sm font-medium text-foreground mb-1.5">Telefone</label>
                         <input
                           type="tel"
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.75_0.15_195/0.5)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors"
                           placeholder="+55 (11) 0000-0000"
                         />
                       </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-1.5">Disciplina de Interesse</label>
                       <select
-                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.75_0.15_195/0.5)] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors"
                       >
                         <option value="">Selecione uma disciplina</option>
                         <option value="fire">Engenharia de Incêndio</option>
@@ -118,13 +118,13 @@ export default function Contact() {
                       <textarea
                         rows={5}
                         required
-                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.75_0.15_195/0.5)] focus:outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors resize-none"
                         placeholder="Descreva brevemente o projeto, localização, tipo de ocupação e principais necessidades..."
                       />
                     </div>
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)] rounded-sm hover:bg-[oklch(0.8_0.15_195)] transition-all w-full justify-center"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all w-full justify-center"
                     >
                       Enviar Solicitação
                       <Send size={18} />
@@ -141,8 +141,8 @@ export default function Contact() {
                   <h3 className="font-display text-lg font-bold text-foreground mb-4">Informações de Contato</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)] shrink-0">
-                        <Mail size={16} className="text-[oklch(0.75_0.15_195)]" />
+                      <div className="p-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                        <Mail size={16} className="text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">E-mail</div>
@@ -150,8 +150,8 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)] shrink-0">
-                        <Phone size={16} className="text-[oklch(0.75_0.15_195)]" />
+                      <div className="p-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                        <Phone size={16} className="text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">Telefone</div>
@@ -159,8 +159,8 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-sm bg-[oklch(0.75_0.15_195/0.1)] border border-[oklch(0.75_0.15_195/0.2)] shrink-0">
-                        <MapPin size={16} className="text-[oklch(0.75_0.15_195)]" />
+                      <div className="p-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                        <MapPin size={16} className="text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">Localização</div>
@@ -188,7 +188,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-sm bg-[oklch(0.75_0.15_195/0.05)] border border-[oklch(0.75_0.15_195/0.15)]">
+                <div className="p-6 rounded-sm bg-[oklch(0.58_0.22_25/0.05)] border border-[oklch(0.58_0.22_25/0.15)]">
                   <h3 className="font-display text-lg font-bold text-foreground mb-2">Resposta Rápida</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Respondemos todas as solicitações em até 24 horas úteis. Para projetos urgentes,

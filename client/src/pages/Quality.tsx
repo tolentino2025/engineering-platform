@@ -109,7 +109,7 @@ export default function Quality() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: "Conformidade em Inspeções", value: 98, color: "oklch(0.7_0.17_155)" },
-              { label: "Documentação Completa", value: 100, color: "oklch(0.75_0.15_195)" },
+              { label: "Documentação Completa", value: 100, color: "oklch(0.58_0.22_25)" },
               { label: "Testes de Aceitação", value: 95, color: "oklch(0.8_0.16_75)" },
               { label: "Satisfação do Cliente", value: 97, color: "oklch(0.7_0.17_155)" },
             ].map((metric, i) => (
@@ -150,7 +150,7 @@ export default function Quality() {
             </p>
             <Link
               href="/processo"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.75_0.15_195)] text-[oklch(0.1_0.01_270)] rounded-sm hover:bg-[oklch(0.8_0.15_195)] transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
             >
               Ver Processo de Engenharia
               <ArrowRight size={18} />
