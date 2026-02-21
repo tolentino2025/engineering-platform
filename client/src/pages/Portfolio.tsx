@@ -2,7 +2,7 @@
    DESIGN: Dark Industrial Command Center
    PORTFOLIO PAGE — Advanced filtering and project details
    ============================================================ */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -17,6 +17,8 @@ export default function Portfolio() {
   const [location] = useLocation();
   const [activeIndustry, setActiveIndustry] = useState("Todos");
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
+  const [filtersVisible, setFiltersVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   const industries = ["Todos", ...Array.from(new Set(PROJECTS.map((p) => p.industry)))];
   const complexities = ["Todos", ...Array.from(new Set(PROJECTS.map((p) => p.complexity)))];
@@ -33,6 +35,16 @@ export default function Portfolio() {
       window.scrollTo(0, 0);
     }
   }, [location]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setFiltersVisible(currentY < lastScrollY.current || currentY < 100);
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const filtered = PROJECTS.filter(
     (p) => activeIndustry === "Todos" || p.industry === activeIndustry
@@ -62,7 +74,11 @@ export default function Portfolio() {
       </section>
 
       {/* Filters */}
-      <section className="py-8 border-b border-[oklch(0.2_0.01_270/0.5)] sticky top-16 lg:top-20 z-30 bg-[oklch(0.13_0.01_270/0.95)] backdrop-blur-xl">
+      <motion.section
+        animate={{ y: filtersVisible ? 0 : "-100%", opacity: filtersVisible ? 1 : 0 }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
+        className="py-8 border-b border-[oklch(0.2_0.01_270/0.5)] sticky top-16 lg:top-20 z-30 bg-[oklch(0.13_0.01_270/0.95)] backdrop-blur-xl"
+      >
         <div className="container">
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground mr-2">Filtrar:</span>
@@ -81,7 +97,7 @@ export default function Portfolio() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects List */}
       <section className="py-16 lg:py-20">

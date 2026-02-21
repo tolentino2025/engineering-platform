@@ -42,6 +42,24 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Map */}
+      <section className="pb-0">
+        <div className="container">
+          <div className="rounded-sm overflow-hidden glow-border" style={{ height: "400px" }}>
+            <iframe
+              title="Localização Jonel Engenharia"
+              src="https://maps.google.com/maps?q=R.+Jo%C3%A3o+Batista+Mastr%C3%A2ngelo,+89,+Jardim+Anton+von+Zuben,+Campinas,+SP,+13044-580&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form & Info */}
       <section className="py-16 lg:py-24">
         <div className="container">
@@ -163,8 +181,12 @@ export default function Contact() {
                         <MapPin size={16} className="text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-foreground">Localização</div>
-                        <div className="text-sm text-muted-foreground">Campinas, SP — Brasil</div>
+                        <div className="text-sm font-medium text-foreground">Endereço</div>
+                        <div className="text-sm text-muted-foreground leading-relaxed">
+                          R. João Batista Mastrângelo, 89<br />
+                          Jardim Anton von Zuben<br />
+                          Campinas — SP, 13044-580
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -174,18 +196,21 @@ export default function Contact() {
                   <h3 className="font-display text-lg font-bold text-foreground mb-4">Horário de Atendimento</h3>
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <div className="flex justify-between">
-                      <span>Segunda a Sexta</span>
-                      <span className="font-mono text-foreground">08:00 — 18:00</span>
+                      <span>Segunda a Quinta</span>
+                      <span className="font-mono text-foreground">07:00 — 17:00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Sábado</span>
-                      <span className="font-mono text-foreground">08:00 — 12:00</span>
+                      <span className="font-mono text-foreground">07:00 — 16:00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Domingo</span>
                       <span className="font-mono text-muted-foreground">Fechado</span>
                     </div>
                   </div>
+                  <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-[oklch(0.25_0.01_270/0.4)]">
+                    Sem execução de obras aos sábados e domingos.
+                  </p>
                 </div>
 
                 <div className="p-6 rounded-sm bg-[oklch(0.58_0.22_25/0.05)] border border-[oklch(0.58_0.22_25/0.15)]">
