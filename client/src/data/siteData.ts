@@ -84,8 +84,8 @@ export const NAV_ITEMS = [
 
 // Authority Stats
 export const STATS = [
-  { value: 15, suffix: "+", label: "Anos de Operação", description: "Experiência consolidada em engenharia industrial" },
-  { value: 350, suffix: "+", label: "Projetos Executados", description: "Em diversos segmentos industriais" },
+  { value: 40, suffix: "+", label: "Anos de Operação", description: "Experiência consolidada em engenharia industrial" },
+  { value: 850, suffix: "+", label: "Projetos Executados", description: "Em diversos segmentos industriais" },
   { value: 8, suffix: "", label: "Segmentos Atendidos", description: "Indústrias de alta complexidade" },
   { value: 98, suffix: "%", label: "Taxa de Conformidade", description: "Em auditorias e inspeções" },
 ];
