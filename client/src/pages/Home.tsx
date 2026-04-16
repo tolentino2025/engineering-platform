@@ -28,13 +28,18 @@ export default function Home() {
     <PageLayout>
       {/* ===== 1) CINEMATIC HERO ===== */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Background Video with Overlay */}
         <div className="absolute inset-0">
-          <img
-            src={IMAGES.hero}
-            alt="Industrial infrastructure"
+          <video
+            src="/videos/hero.mp4"
+            poster={IMAGES.hero}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
             className="w-full h-full object-cover"
-            loading="eager"
+            aria-hidden="true"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.08_0.01_270/0.95)] via-[oklch(0.1_0.01_270/0.85)] to-[oklch(0.08_0.01_270/0.7)]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.08_0.01_270)] via-transparent to-[oklch(0.08_0.01_270/0.3)]" />
