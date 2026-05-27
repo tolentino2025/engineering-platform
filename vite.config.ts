@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
-import { defineConfig, type Plugin, type ViteDevServer } from "vite";
+import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 // =============================================================================
@@ -150,7 +150,66 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+/**
+ * Vite plugin que expõe /api/send-proposal em modo dev,
+ * espelhando a serverless function de produção (api/send-proposal.ts).
+ */
+function viteApiSendProposalPlugin(): Plugin {
+  return {
+    name: "api-send-proposal-dev",
+    configResolved() {
+      // Carrega .env / .env.local para process.env (necessário para o handler Brevo em dev)
+      const env = loadEnv("development", PROJECT_ROOT, "");
+      for (const [k, v] of Object.entries(env)) {
+        if (process.env[k] === undefined && v !== undefined) {
+          process.env[k] = v;
+        }
+      }
+    },
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/send-proposal", async (req, res, next) => {
+        if (req.method === "OPTIONS") {
+          res.statusCode = 204;
+          res.setHeader("Access-Control-Allow-Origin", "*");
+          res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+          res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+          res.end();
+          return;
+        }
+        if (req.method !== "POST") {
+          return next();
+        }
+
+        let raw = "";
+        req.on("data", (chunk) => {
+          raw += chunk.toString();
+        });
+        req.on("end", async () => {
+          try {
+            const payload = raw ? JSON.parse(raw) : {};
+            const { sendProposalEmail } = await import("./api/_brevo");
+            const result = await sendProposalEmail(payload);
+            res.setHeader("Content-Type", "application/json");
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            if (result.ok) {
+              res.statusCode = 200;
+              res.end(JSON.stringify({ ok: true, messageId: result.messageId }));
+            } else {
+              res.statusCode = result.status;
+              res.end(JSON.stringify({ ok: false, error: result.error }));
+            }
+          } catch (e: any) {
+            res.statusCode = 400;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({ ok: false, error: `JSON inválido: ${e?.message || e}` }));
+          }
+        });
+      });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), viteApiSendProposalPlugin()];
 
 export default defineConfig({
   plugins,
