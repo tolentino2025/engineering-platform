@@ -41,8 +41,8 @@ export default function Home() {
             className="w-full h-full object-cover"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.97_0_0/0.40)] dark:from-[oklch(0.08_0.01_270/0.40)] via-[oklch(0.94_0_0/0.36)] dark:via-[oklch(0.1_0.01_270/0.36)] to-[oklch(0.97_0_0/0.30)] dark:to-[oklch(0.08_0.01_270/0.30)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.97_0_0/0.42)] dark:from-[oklch(0.08_0.01_270/0.42)] via-transparent to-[oklch(0.97_0_0/0.13)] dark:to-[oklch(0.08_0.01_270/0.13)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent dark:from-[oklch(0.08_0.01_270/0.40)] via-transparent dark:via-[oklch(0.1_0.01_270/0.36)] to-transparent dark:to-[oklch(0.08_0.01_270/0.30)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent dark:from-[oklch(0.08_0.01_270/0.42)] via-transparent to-transparent dark:to-[oklch(0.08_0.01_270/0.13)]" />
         </div>
 
         {/* Content */}
