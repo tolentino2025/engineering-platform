@@ -24,15 +24,15 @@ export default function Compliance() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_155/0.2)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.93_0_0/0.2)] dark:from-[oklch(0.1_0.015_155/0.2)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.7_0.17_155/0.1)] border border-[oklch(0.7_0.17_155/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.7_0.17_155)]">Compliance & Regulatório</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.42_0_0/0.1)] dark:bg-[oklch(0.7_0.17_155/0.1)] border border-[oklch(0.42_0_0/0.2)] dark:border-[oklch(0.7_0.17_155/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]">Compliance & Regulatório</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
-                Conformidade <span className="text-[oklch(0.7_0.17_155)]">Responsável</span>
+                Conformidade <span className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]">Responsável</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 Alinhamento responsável com normas nacionais, boas práticas de engenharia e,
@@ -47,9 +47,9 @@ export default function Compliance() {
       <section className="py-8">
         <div className="container">
           <ScrollReveal>
-            <div className="p-6 rounded-sm bg-[oklch(0.8_0.16_75/0.05)] border border-[oklch(0.8_0.16_75/0.15)]">
+            <div className="p-6 rounded-sm bg-[oklch(0.50_0_0/0.05)] dark:bg-[oklch(0.8_0.16_75/0.05)] border border-[oklch(0.50_0_0/0.15)] dark:border-[oklch(0.8_0.16_75/0.15)]">
               <div className="flex items-start gap-3">
-                <AlertTriangle size={20} className="text-[oklch(0.8_0.16_75)] shrink-0 mt-0.5" />
+                <AlertTriangle size={20} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)] shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-display text-base font-bold text-foreground mb-1">Nota Importante</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -81,8 +81,8 @@ export default function Compliance() {
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 lg:p-8 rounded-sm glass-panel glow-border">
                     <div className="lg:col-span-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2.5 rounded-sm bg-[oklch(0.7_0.17_155/0.1)] border border-[oklch(0.7_0.17_155/0.2)]">
-                          <Icon size={20} className="text-[oklch(0.7_0.17_155)]" />
+                        <div className="p-2.5 rounded-sm bg-[oklch(0.42_0_0/0.1)] dark:bg-[oklch(0.7_0.17_155/0.1)] border border-[oklch(0.42_0_0/0.2)] dark:border-[oklch(0.7_0.17_155/0.2)]">
+                          <Icon size={20} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                         </div>
                         <h3 className="font-display text-xl font-bold text-foreground">{item.title}</h3>
                       </div>
@@ -92,8 +92,8 @@ export default function Compliance() {
                       <h4 className="font-display text-sm font-bold text-foreground uppercase tracking-wide mb-3">Normas e Referências</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {item.standards.map((std) => (
-                          <div key={std} className="flex items-start gap-2 p-3 rounded-sm bg-[oklch(0.14_0.01_270/0.5)]">
-                            <CheckCircle2 size={14} className="text-[oklch(0.7_0.17_155)] mt-0.5 shrink-0" />
+                          <div key={std} className="flex items-start gap-2 p-3 rounded-sm bg-[oklch(0.93_0_0/0.5)] dark:bg-[oklch(0.14_0.01_270/0.5)]">
+                            <CheckCircle2 size={14} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)] mt-0.5 shrink-0" />
                             <span className="text-sm text-muted-foreground">{std}</span>
                           </div>
                         ))}
@@ -108,7 +108,7 @@ export default function Compliance() {
       </section>
 
       {/* Approach */}
-      <section className="py-16 lg:py-24 bg-[oklch(0.1_0.008_270)]">
+      <section className="py-16 lg:py-24 bg-[oklch(0.94_0_0)] dark:bg-[oklch(0.1_0.008_270)]">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
@@ -125,7 +125,7 @@ export default function Compliance() {
                   "Sem exageros ou falsas certificações",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={16} className="text-[oklch(0.7_0.17_155)] mt-0.5 shrink-0" />
+                    <CheckCircle2 size={16} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)] mt-0.5 shrink-0" />
                     <span className="text-sm text-foreground">{item}</span>
                   </div>
                 ))}
@@ -156,7 +156,7 @@ export default function Compliance() {
             </p>
             <Link
               href="/contato"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.22_0_0)] dark:hover:bg-[oklch(0.50_0.20_25)] transition-all"
             >
               Falar com Especialista
               <ArrowRight size={18} />

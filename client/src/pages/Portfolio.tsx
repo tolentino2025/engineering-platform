@@ -54,12 +54,12 @@ export default function Portfolio() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.93_0_0/0.3)] dark:from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Portfólio de Projetos</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">Portfólio de Projetos</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
                 Projetos <span className="text-gradient-red">Executados</span>
@@ -77,7 +77,7 @@ export default function Portfolio() {
       <motion.section
         animate={{ y: filtersVisible ? 0 : "-100%", opacity: filtersVisible ? 1 : 0 }}
         transition={{ duration: 0.25, ease: "easeInOut" }}
-        className="py-8 border-b border-[oklch(0.2_0.01_270/0.5)] sticky top-16 lg:top-20 z-30 bg-[oklch(0.13_0.01_270/0.95)] backdrop-blur-xl"
+        className="py-8 border-b border-[oklch(0.89_0_0/0.5)] dark:border-[oklch(0.2_0.01_270/0.5)] sticky top-16 lg:top-20 z-30 bg-[oklch(0.95_0_0/0.95)] dark:bg-[oklch(0.13_0.01_270/0.95)] backdrop-blur-xl"
       >
         <div className="container">
           <div className="flex flex-wrap items-center gap-3">
@@ -88,8 +88,8 @@ export default function Portfolio() {
                 onClick={() => setActiveIndustry(ind)}
                 className={`px-4 py-2 text-sm font-medium rounded-sm transition-all ${
                   activeIndustry === ind
-                    ? "bg-[oklch(0.58_0.22_25)] text-white"
-                    : "bg-[oklch(0.18_0.01_270)] text-muted-foreground hover:text-foreground border border-[oklch(0.25_0.01_270/0.5)]"
+                    ? "bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white"
+                    : "bg-[oklch(0.90_0_0)] dark:bg-[oklch(0.18_0.01_270)] text-muted-foreground hover:text-foreground border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)]"
                 }`}
               >
                 {ind}
@@ -128,27 +128,27 @@ export default function Portfolio() {
                             className="w-full h-full object-cover"
                             loading="lazy"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[oklch(0.16_0.012_270/0.8)] hidden lg:block" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[oklch(0.985_0_0/0.8)] dark:to-[oklch(0.16_0.012_270/0.8)] hidden lg:block" />
                         </div>
                         <div className="lg:col-span-2 p-6 lg:p-8">
                           <div className="flex flex-wrap gap-2 mb-3">
-                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] text-[oklch(0.58_0.22_25)] rounded-sm">
+                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)] text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)] rounded-sm">
                               {project.industry}
                             </span>
-                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.8_0.16_75/0.2)] text-[oklch(0.8_0.16_75)] rounded-sm">
+                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.50_0_0/0.1)] dark:bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.50_0_0/0.2)] dark:border-[oklch(0.8_0.16_75/0.2)] text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)] rounded-sm">
                               {project.systemType}
                             </span>
-                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.2_0.01_270)] border border-[oklch(0.3_0.01_270/0.5)] text-muted-foreground rounded-sm">
+                            <span className="px-2 py-1 text-xs font-mono bg-[oklch(0.89_0_0)] dark:bg-[oklch(0.2_0.01_270)] border border-[oklch(0.80_0_0/0.5)] dark:border-[oklch(0.3_0.01_270/0.5)] text-muted-foreground rounded-sm">
                               Complexidade: {project.complexity}
                             </span>
                           </div>
                           <h3 className="font-display text-2xl font-bold text-foreground mb-2">{project.title}</h3>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                            <MapPin size={14} className="text-[oklch(0.58_0.22_25)]" />
+                            <MapPin size={14} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                             {project.location}
                           </div>
                           <p className="text-sm text-muted-foreground leading-relaxed mb-4">{project.overview}</p>
-                          <div className="flex items-center gap-2 text-sm font-medium text-[oklch(0.58_0.22_25)]">
+                          <div className="flex items-center gap-2 text-sm font-medium text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">
                             <span>{expandedProject === project.id ? "Recolher detalhes" : "Ver detalhes completos"}</span>
                             <motion.div
                               animate={{ rotate: expandedProject === project.id ? 180 : 0 }}
@@ -171,33 +171,33 @@ export default function Portfolio() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="border-t border-[oklch(0.25_0.01_270/0.5)] p-6 lg:p-8">
+                          <div className="border-t border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] p-6 lg:p-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                               <div className="space-y-6">
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Layers size={14} className="text-[oklch(0.58_0.22_25)]" />
+                                    <Layers size={14} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                                     Escopo
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.scope}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <AlertTriangle size={14} className="text-[oklch(0.8_0.16_75)]" />
+                                    <AlertTriangle size={14} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)]" />
                                     Desafios de Engenharia
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.challenges}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Wrench size={14} className="text-[oklch(0.58_0.22_25)]" />
+                                    <Wrench size={14} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                                     Solução Aplicada
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.solution}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Wrench size={14} className="text-[oklch(0.58_0.22_25)]" />
+                                    <Wrench size={14} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                                     Metodologia de Execução
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.methodology}</p>
@@ -206,28 +206,28 @@ export default function Portfolio() {
                               <div className="space-y-6">
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Shield size={14} className="text-[oklch(0.7_0.17_155)]" />
+                                    <Shield size={14} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                                     Controle de Riscos
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.riskControl}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <Shield size={14} className="text-[oklch(0.7_0.17_155)]" />
+                                    <Shield size={14} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                                     Procedimentos de Segurança
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.safetyProcedures}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <FileText size={14} className="text-[oklch(0.8_0.16_75)]" />
+                                    <FileText size={14} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)]" />
                                     Documentação Entregue
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.documentation}</p>
                                 </div>
                                 <div>
                                   <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                    <CheckCircle2 size={14} className="text-[oklch(0.7_0.17_155)]" />
+                                    <CheckCircle2 size={14} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                                     Alinhamento de Compliance
                                   </h4>
                                   <p className="text-sm text-muted-foreground leading-relaxed">{project.complianceAlignment}</p>
@@ -235,9 +235,9 @@ export default function Portfolio() {
                               </div>
                             </div>
                             {/* Results */}
-                            <div className="mt-6 p-4 rounded-sm bg-[oklch(0.7_0.17_155/0.05)] border border-[oklch(0.7_0.17_155/0.15)]">
+                            <div className="mt-6 p-4 rounded-sm bg-[oklch(0.42_0_0/0.05)] dark:bg-[oklch(0.7_0.17_155/0.05)] border border-[oklch(0.42_0_0/0.15)] dark:border-[oklch(0.7_0.17_155/0.15)]">
                               <h4 className="flex items-center gap-2 font-display text-sm font-bold text-foreground uppercase tracking-wide mb-2">
-                                <CheckCircle2 size={14} className="text-[oklch(0.7_0.17_155)]" />
+                                <CheckCircle2 size={14} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                                 Resultados
                               </h4>
                               <p className="text-sm text-muted-foreground leading-relaxed">{project.results}</p>

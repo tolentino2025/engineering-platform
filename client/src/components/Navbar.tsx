@@ -2,13 +2,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, Sun, Moon } from "lucide-react";
 import { NAV_ITEMS, IMAGES } from "@/data/siteData";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -25,7 +27,7 @@ export default function Navbar() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[oklch(0.13_0.01_270/0.85)] backdrop-blur-xl border-b border-[oklch(0.25_0.01_270/0.5)]"
+            ? "bg-[oklch(0.95_0_0/0.85)] dark:bg-[oklch(0.13_0.01_270/0.85)] backdrop-blur-xl border-b border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)]"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
@@ -38,7 +40,7 @@ export default function Navbar() {
             <img
               src={IMAGES.logo}
               alt="Jonel Engenharia"
-              className="h-10 lg:h-12 w-auto"
+              className="h-10 lg:h-12 w-auto [filter:brightness(0)] dark:[filter:none]"
             />
           </Link>
 
@@ -50,7 +52,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
                   location === item.href
-                    ? "text-[oklch(0.58_0.22_25)] bg-[oklch(0.58_0.22_25/0.1)]"
+                    ? "text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)] bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-[oklch(1_0_0/0.05)]"
                 }`}
               >
@@ -61,22 +63,43 @@ export default function Navbar() {
 
           {/* CTA Desktop */}
           <div className="hidden lg:flex items-center gap-3">
+            {toggleTheme && (
+              <button
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+                title={theme === "dark" ? "Tema claro" : "Tema escuro"}
+                className="p-2.5 rounded-md border border-border text-foreground hover:bg-[oklch(0.32_0_0/0.08)] dark:hover:bg-[oklch(1_0_0/0.08)] transition-colors"
+              >
+                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+            )}
             <Link
               href="/contato"
-              className="px-5 py-2.5 text-sm font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-md hover:bg-[oklch(0.50_0.20_25)] transition-colors"
+              className="px-5 py-2.5 text-sm font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-md hover:bg-[oklch(0.22_0_0)] dark:hover:bg-[oklch(0.50_0.20_25)] transition-colors"
             >
               Solicitar Proposta
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile actions */}
+          <div className="flex items-center gap-1 lg:hidden">
+            {toggleTheme && (
+              <button
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+                className="p-2 text-foreground"
+              >
+                {theme === "dark" ? <Sun size={22} /> : <Moon size={22} />}
+              </button>
+            )}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -84,7 +107,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[oklch(0.13_0.01_270/0.98)] backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-[oklch(0.95_0_0/0.98)] dark:bg-[oklch(0.13_0.01_270/0.98)] backdrop-blur-xl lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -100,9 +123,9 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center justify-between py-4 px-4 text-lg font-display font-semibold border-b border-[oklch(0.25_0.01_270/0.3)] ${
+                    className={`flex items-center justify-between py-4 px-4 text-lg font-display font-semibold border-b border-[oklch(0.84_0_0/0.3)] dark:border-[oklch(0.25_0.01_270/0.3)] ${
                       location === item.href
-                        ? "text-[oklch(0.58_0.22_25)]"
+                        ? "text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]"
                         : "text-foreground"
                     }`}
                   >
@@ -119,7 +142,7 @@ export default function Navbar() {
               >
                 <Link
                   href="/contato"
-                  className="block w-full text-center px-6 py-4 text-lg font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-md"
+                  className="block w-full text-center px-6 py-4 text-lg font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-md"
                 >
                   Solicitar Proposta
                 </Link>

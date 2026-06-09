@@ -24,12 +24,12 @@ export default function Process() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.93_0_0/0.3)] dark:from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Processo de Engenharia</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">Processo de Engenharia</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
                 Metodologia de <span className="text-gradient-red">Execução</span>
@@ -48,7 +48,7 @@ export default function Process() {
         <div className="container">
           <div className="relative">
             {/* Vertical timeline line */}
-            <div className="hidden lg:block absolute left-[39px] top-0 bottom-0 w-px bg-gradient-to-b from-[oklch(0.58_0.22_25/0.4)] via-[oklch(0.58_0.22_25/0.2)] to-transparent" />
+            <div className="hidden lg:block absolute left-[39px] top-0 bottom-0 w-px bg-gradient-to-b from-[oklch(0.32_0_0/0.4)] dark:from-[oklch(0.58_0.22_25/0.4)] via-[oklch(0.32_0_0/0.2)] dark:via-[oklch(0.58_0.22_25/0.2)] to-transparent" />
 
             <div className="space-y-12 lg:space-y-16">
               {PROCESS_STEPS.map((step, i) => {
@@ -58,9 +58,9 @@ export default function Process() {
                     <div className="flex gap-6 lg:gap-10">
                       {/* Step number & icon */}
                       <div className="shrink-0 flex flex-col items-center">
-                        <div className="relative w-20 h-20 rounded-sm bg-[oklch(0.16_0.012_270)] border border-[oklch(0.58_0.22_25/0.3)] flex items-center justify-center glow-border">
-                          <Icon size={28} className="text-[oklch(0.58_0.22_25)]" />
-                          <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[oklch(0.58_0.22_25)] text-white font-mono text-sm font-bold flex items-center justify-center">
+                        <div className="relative w-20 h-20 rounded-sm bg-[oklch(0.985_0_0)] dark:bg-[oklch(0.16_0.012_270)] border border-[oklch(0.32_0_0/0.3)] dark:border-[oklch(0.58_0.22_25/0.3)] flex items-center justify-center glow-border">
+                          <Icon size={28} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
+                          <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white font-mono text-sm font-bold flex items-center justify-center">
                             {step.id}
                           </span>
                         </div>
@@ -90,7 +90,7 @@ export default function Process() {
       </section>
 
       {/* Summary */}
-      <section className="py-16 lg:py-24 bg-[oklch(0.1_0.008_270)]">
+      <section className="py-16 lg:py-24 bg-[oklch(0.94_0_0)] dark:bg-[oklch(0.1_0.008_270)]">
         <div className="container">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
@@ -110,14 +110,14 @@ export default function Process() {
                   { label: "Verificações", value: "100%" },
                 ].map((item) => (
                   <div key={item.label} className="p-4 rounded-sm glass-panel">
-                    <div className="font-display text-2xl font-bold text-[oklch(0.58_0.22_25)]">{item.value}</div>
+                    <div className="font-display text-2xl font-bold text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">{item.value}</div>
                     <div className="text-xs text-muted-foreground mt-1">{item.label}</div>
                   </div>
                 ))}
               </div>
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.22_0_0)] dark:hover:bg-[oklch(0.50_0.20_25)] transition-all"
               >
                 Solicitar Proposta
                 <ArrowRight size={18} />

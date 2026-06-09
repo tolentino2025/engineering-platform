@@ -44,29 +44,68 @@
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   /* NEW: Red Industrial System — replaces cyan */
-  --color-red-accent: oklch(0.58 0.22 25);
-  --color-red-deep: oklch(0.50 0.20 25);
-  --color-red-glow: oklch(0.58 0.22 25 / 0.15);
-  --color-amber-glow: oklch(0.8 0.16 75);
-  --color-green-ops: oklch(0.7 0.17 155);
+  --color-red-accent: oklch(0.32 0 0);
+  --color-red-deep: oklch(0.22 0 0);
+  --color-red-glow: oklch(0.32 0 0 / 0.15);
+  --color-amber-glow: oklch(0.50 0 0);
+  --color-green-ops: oklch(0.42 0 0);
 }
 
 :root {
   --radius: 0.5rem;
+  --background: oklch(0.95 0 0);
+  --foreground: oklch(0.18 0 0);
+  --card: oklch(0.985 0 0);
+  --card-foreground: oklch(0.18 0 0);
+  --popover: oklch(0.985 0 0);
+  --popover-foreground: oklch(0.18 0 0);
+  /* PRIMARY: Crimson Technical Red — was cyan */
+  --primary: oklch(0.32 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.89 0 0);
+  --secondary-foreground: oklch(0.30 0 0);
+  --muted: oklch(0.91 0 0);
+  --muted-foreground: oklch(0.46 0 0);
+  /* ACCENT: Amber CTA — preserved */
+  --accent: oklch(0.50 0 0);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.32 0 0);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.84 0 0);
+  --input: oklch(0.91 0 0);
+  --ring: oklch(0.32 0 0);
+  --chart-1: oklch(0.32 0 0);
+  --chart-2: oklch(0.22 0 0);
+  --chart-3: oklch(0.50 0 0);
+  --chart-4: oklch(0.42 0 0);
+  --chart-5: oklch(0.28 0 0);
+  --sidebar: oklch(0.93 0 0);
+  --sidebar-foreground: oklch(0.18 0 0);
+  --sidebar-primary: oklch(0.32 0 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.89 0 0);
+  --sidebar-accent-foreground: oklch(0.18 0 0);
+  --sidebar-border: oklch(0.84 0 0);
+  --sidebar-ring: oklch(0.32 0 0);
+}
+
+/* ===========================================================
+   DARK THEME — Industrial original (escuro + crimson red)
+   Ativado pela classe .dark no <html> (ThemeProvider)
+   =========================================================== */
+.dark {
   --background: oklch(0.13 0.01 270);
   --foreground: oklch(0.9 0.005 250);
   --card: oklch(0.16 0.012 270);
   --card-foreground: oklch(0.9 0.005 250);
   --popover: oklch(0.16 0.012 270);
   --popover-foreground: oklch(0.9 0.005 250);
-  /* PRIMARY: Crimson Technical Red — was cyan */
   --primary: oklch(0.58 0.22 25);
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.2 0.012 270);
   --secondary-foreground: oklch(0.8 0.005 250);
   --muted: oklch(0.22 0.01 270);
   --muted-foreground: oklch(0.6 0.01 250);
-  /* ACCENT: Amber CTA — preserved */
   --accent: oklch(0.8 0.16 75);
   --accent-foreground: oklch(0.13 0.01 270);
   --destructive: oklch(0.6 0.2 25);
@@ -87,6 +126,12 @@
   --sidebar-accent-foreground: oklch(0.9 0.005 250);
   --sidebar-border: oklch(0.25 0.01 270);
   --sidebar-ring: oklch(0.58 0.22 25);
+  /* custom named colors (caso usadas via classes utilitárias) */
+  --color-red-accent: oklch(0.58 0.22 25);
+  --color-red-deep: oklch(0.50 0.20 25);
+  --color-red-glow: oklch(0.58 0.22 25 / 0.15);
+  --color-amber-glow: oklch(0.8 0.16 75);
+  --color-green-ops: oklch(0.7 0.17 155);
 }
 
 @layer base {
@@ -147,25 +192,25 @@
   }
 
   .glass-panel {
-    background: oklch(0.16 0.012 270 / 0.6);
+    background: oklch(0.985 0 0 / 0.6);
     backdrop-filter: blur(16px);
-    border: 1px solid oklch(0.3 0.01 270 / 0.4);
+    border: 1px solid oklch(0.80 0 0 / 0.4);
   }
 
   /* REFACTORED: glow-border now uses crimson red */
   .glow-border {
-    box-shadow: 0 0 0 1px oklch(0.58 0.22 25 / 0.12),
-                0 0 20px oklch(0.58 0.22 25 / 0.04);
+    box-shadow: 0 0 0 1px oklch(0.32 0 0 / 0.12),
+                0 0 20px oklch(0.32 0 0 / 0.04);
   }
 
   .glow-border-hover:hover {
-    box-shadow: 0 0 0 1px oklch(0.58 0.22 25 / 0.25),
-                0 0 30px oklch(0.58 0.22 25 / 0.08);
+    box-shadow: 0 0 0 1px oklch(0.32 0 0 / 0.25),
+                0 0 30px oklch(0.32 0 0 / 0.08);
   }
 
   /* REFACTORED: text-gradient-cyan → text-gradient-red */
   .text-gradient-red {
-    background: linear-gradient(135deg, oklch(0.58 0.22 25), oklch(0.65 0.18 30));
+    background: linear-gradient(135deg, oklch(0.32 0 0), oklch(0.45 0 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -173,7 +218,7 @@
 
   /* PRESERVED: amber gradient */
   .text-gradient-amber {
-    background: linear-gradient(135deg, oklch(0.8 0.16 75), oklch(0.9 0.12 75));
+    background: linear-gradient(135deg, oklch(0.50 0 0), oklch(0.62 0 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -189,7 +234,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    border-color: oklch(0.58 0.22 25 / 0.35);
+    border-color: oklch(0.32 0 0 / 0.35);
   }
   .corner-brackets::before {
     top: -1px;
@@ -216,11 +261,41 @@
 
   /* NEW: Subtle red pulse animation for hover states */
   @keyframes red-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 oklch(0.58 0.22 25 / 0); }
-    50% { box-shadow: 0 0 12px 2px oklch(0.58 0.22 25 / 0.15); }
+    0%, 100% { box-shadow: 0 0 0 0 oklch(0.32 0 0 / 0); }
+    50% { box-shadow: 0 0 12px 2px oklch(0.32 0 0 / 0.15); }
   }
   .red-pulse-hover:hover {
     animation: red-pulse 2s ease-in-out infinite;
+  }
+
+  /* ===== DARK THEME overrides — restaura o crimson industrial ===== */
+  .dark .glass-panel {
+    background: oklch(0.16 0.012 270 / 0.6);
+    border: 1px solid oklch(0.3 0.01 270 / 0.4);
+  }
+  .dark .glow-border {
+    box-shadow: 0 0 0 1px oklch(0.58 0.22 25 / 0.12),
+                0 0 20px oklch(0.58 0.22 25 / 0.04);
+  }
+  .dark .glow-border-hover:hover {
+    box-shadow: 0 0 0 1px oklch(0.58 0.22 25 / 0.25),
+                0 0 30px oklch(0.58 0.22 25 / 0.08);
+  }
+  .dark .text-gradient-red {
+    background: linear-gradient(135deg, oklch(0.58 0.22 25), oklch(0.65 0.18 30));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .dark .text-gradient-amber {
+    background: linear-gradient(135deg, oklch(0.8 0.16 75), oklch(0.9 0.12 75));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .dark .corner-brackets::before,
+  .dark .corner-brackets::after {
+    border-color: oklch(0.58 0.22 25 / 0.35);
   }
 }
 

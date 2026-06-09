@@ -31,12 +31,12 @@ export default function Quality() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_75/0.2)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.93_0_0/0.2)] dark:from-[oklch(0.1_0.015_75/0.2)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.8_0.16_75/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.8_0.16_75)]">Qualidade & Segurança</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.50_0_0/0.1)] dark:bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.50_0_0/0.2)] dark:border-[oklch(0.8_0.16_75/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)]">Qualidade & Segurança</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
                 Excelência <span className="text-gradient-amber">Operacional</span>
@@ -81,8 +81,8 @@ export default function Quality() {
                 <ScrollReveal key={section.title} delay={i * 0.05}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-start gap-4">
-                      <div className="p-2.5 rounded-sm bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.8_0.16_75/0.2)] shrink-0">
-                        <Icon size={20} className="text-[oklch(0.8_0.16_75)]" />
+                      <div className="p-2.5 rounded-sm bg-[oklch(0.50_0_0/0.1)] dark:bg-[oklch(0.8_0.16_75/0.1)] border border-[oklch(0.50_0_0/0.2)] dark:border-[oklch(0.8_0.16_75/0.2)] shrink-0">
+                        <Icon size={20} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)]" />
                       </div>
                       <div>
                         <h3 className="font-display text-lg font-bold text-foreground mb-2">{section.title}</h3>
@@ -98,7 +98,7 @@ export default function Quality() {
       </section>
 
       {/* Progress Indicators */}
-      <section className="py-16 lg:py-24 bg-[oklch(0.1_0.008_270)]">
+      <section className="py-16 lg:py-24 bg-[oklch(0.94_0_0)] dark:bg-[oklch(0.1_0.008_270)]">
         <div className="container">
           <SectionHeader
             tag="Indicadores"
@@ -150,7 +150,7 @@ export default function Quality() {
             </p>
             <Link
               href="/processo"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.22_0_0)] dark:hover:bg-[oklch(0.50_0.20_25)] transition-all"
             >
               Ver Processo de Engenharia
               <ArrowRight size={18} />

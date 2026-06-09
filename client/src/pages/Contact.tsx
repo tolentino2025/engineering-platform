@@ -66,12 +66,12 @@ export default function Contact() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.93_0_0/0.3)] dark:from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Contato</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">Contato</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
                 Fale <span className="text-gradient-red">Conosco</span>
@@ -114,8 +114,8 @@ export default function Contact() {
 
                 {submitted ? (
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-[oklch(0.7_0.17_155/0.15)] border border-[oklch(0.7_0.17_155/0.3)] flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle2 size={32} className="text-[oklch(0.7_0.17_155)]" />
+                    <div className="w-16 h-16 rounded-full bg-[oklch(0.42_0_0/0.15)] dark:bg-[oklch(0.7_0.17_155/0.15)] border border-[oklch(0.42_0_0/0.3)] dark:border-[oklch(0.7_0.17_155/0.3)] flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 size={32} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                     </div>
                     <h3 className="font-display text-xl font-bold text-foreground mb-2">Mensagem Enviada</h3>
                     <p className="text-sm text-muted-foreground">Entraremos em contato em até 24 horas úteis.</p>
@@ -131,7 +131,7 @@ export default function Contact() {
                           value={form.nome}
                           onChange={(e) => updateField("nome", e.target.value)}
                           disabled={submitting}
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.93_0_0)] dark:bg-[oklch(0.14_0.01_270)] border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.32_0_0/0.5)] dark:focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
                           placeholder="Seu nome completo"
                         />
                       </div>
@@ -143,7 +143,7 @@ export default function Contact() {
                           value={form.empresa}
                           onChange={(e) => updateField("empresa", e.target.value)}
                           disabled={submitting}
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.93_0_0)] dark:bg-[oklch(0.14_0.01_270)] border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.32_0_0/0.5)] dark:focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
                           placeholder="Nome da empresa"
                         />
                       </div>
@@ -157,7 +157,7 @@ export default function Contact() {
                           value={form.email}
                           onChange={(e) => updateField("email", e.target.value)}
                           disabled={submitting}
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.93_0_0)] dark:bg-[oklch(0.14_0.01_270)] border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.32_0_0/0.5)] dark:focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
                           placeholder="seu@email.com"
                         />
                       </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                           value={form.telefone}
                           onChange={(e) => updateField("telefone", e.target.value)}
                           disabled={submitting}
-                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
+                          className="w-full px-4 py-3 rounded-sm bg-[oklch(0.93_0_0)] dark:bg-[oklch(0.14_0.01_270)] border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.32_0_0/0.5)] dark:focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
                           placeholder="+55 (11) 0000-0000"
                         />
                       </div>
@@ -179,7 +179,7 @@ export default function Contact() {
                         value={form.disciplina}
                         onChange={(e) => updateField("disciplina", e.target.value)}
                         disabled={submitting}
-                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
+                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.93_0_0)] dark:bg-[oklch(0.14_0.01_270)] border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.32_0_0/0.5)] dark:focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors disabled:opacity-60"
                       >
                         <option value="">Selecione uma disciplina</option>
                         <option value="fire">Engenharia de Incêndio</option>
@@ -197,14 +197,14 @@ export default function Contact() {
                         value={form.descricao}
                         onChange={(e) => updateField("descricao", e.target.value)}
                         disabled={submitting}
-                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.14_0.01_270)] border border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors resize-none disabled:opacity-60"
+                        className="w-full px-4 py-3 rounded-sm bg-[oklch(0.93_0_0)] dark:bg-[oklch(0.14_0.01_270)] border border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)] text-foreground text-sm focus:border-[oklch(0.32_0_0/0.5)] dark:focus:border-[oklch(0.58_0.22_25/0.5)] focus:outline-none transition-colors resize-none disabled:opacity-60"
                         placeholder="Descreva brevemente o projeto, localização, tipo de ocupação e principais necessidades..."
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.22_0_0)] dark:hover:bg-[oklch(0.50_0.20_25)] transition-all w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {submitting ? (
                         <>
@@ -230,8 +230,8 @@ export default function Contact() {
                   <h3 className="font-display text-lg font-bold text-foreground mb-4">Informações de Contato</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
-                        <Mail size={16} className="text-[oklch(0.58_0.22_25)]" />
+                      <div className="p-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                        <Mail size={16} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">E-mail</div>
@@ -239,8 +239,8 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
-                        <Phone size={16} className="text-[oklch(0.58_0.22_25)]" />
+                      <div className="p-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                        <Phone size={16} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">Telefone</div>
@@ -248,8 +248,8 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)] shrink-0">
-                        <MapPin size={16} className="text-[oklch(0.58_0.22_25)]" />
+                      <div className="p-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)] shrink-0">
+                        <MapPin size={16} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-foreground">Endereço</div>
@@ -279,12 +279,12 @@ export default function Contact() {
                       <span className="font-mono text-muted-foreground">Fechado</span>
                     </div>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-[oklch(0.25_0.01_270/0.4)]">
+                  <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-[oklch(0.84_0_0/0.4)] dark:border-[oklch(0.25_0.01_270/0.4)]">
                     Sem execução de obras aos sábados e domingos.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-sm bg-[oklch(0.58_0.22_25/0.05)] border border-[oklch(0.58_0.22_25/0.15)]">
+                <div className="p-6 rounded-sm bg-[oklch(0.32_0_0/0.05)] dark:bg-[oklch(0.58_0.22_25/0.05)] border border-[oklch(0.32_0_0/0.15)] dark:border-[oklch(0.58_0.22_25/0.15)]">
                   <h3 className="font-display text-lg font-bold text-foreground mb-2">Resposta Rápida</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Respondemos todas as solicitações em até 24 horas úteis. Para projetos urgentes,

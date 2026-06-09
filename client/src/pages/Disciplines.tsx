@@ -41,12 +41,12 @@ export default function Disciplines() {
     <PageLayout>
       {/* Hero */}
       <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.93_0_0/0.3)] dark:from-[oklch(0.1_0.015_25/0.3)] to-transparent" />
         <div className="relative container">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.2)]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">Disciplinas Técnicas</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.2)] dark:border-[oklch(0.58_0.22_25/0.2)]">
+                <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">Disciplinas Técnicas</span>
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-4">
                 Vertentes de <span className="text-gradient-red">Engenharia</span>
@@ -69,7 +69,7 @@ export default function Disciplines() {
           <section
             key={disc.id}
             id={disc.id}
-            className={`py-20 lg:py-28 ${isEven ? "" : "bg-[oklch(0.1_0.008_270)]"}`}
+            className={`py-20 lg:py-28 ${isEven ? "" : "bg-[oklch(0.94_0_0)] dark:bg-[oklch(0.1_0.008_270)]"}`}
           >
             <div className="container">
               {/* Header with image */}
@@ -82,16 +82,16 @@ export default function Disciplines() {
                       className="w-full h-80 lg:h-96 object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.1_0.01_270/0.5)] to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.94_0_0/0.5)] dark:from-[oklch(0.1_0.01_270/0.5)] to-transparent" />
                   </div>
                 </ScrollReveal>
 
                 <ScrollReveal direction={isEven ? "right" : "left"} className={isEven ? "" : "lg:order-1"}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2.5 rounded-sm bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.58_0.22_25/0.3)]">
-                      <Icon size={24} className="text-[oklch(0.58_0.22_25)]" />
+                    <div className="p-2.5 rounded-sm bg-[oklch(0.32_0_0/0.1)] dark:bg-[oklch(0.58_0.22_25/0.1)] border border-[oklch(0.32_0_0/0.3)] dark:border-[oklch(0.58_0.22_25/0.3)]">
+                      <Icon size={24} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                     </div>
-                    <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.58_0.22_25)]">
+                    <span className="font-mono text-xs uppercase tracking-widest text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]">
                       Disciplina {String(idx + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -106,13 +106,13 @@ export default function Disciplines() {
                 <ScrollReveal delay={0}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-2 mb-4">
-                      <Wrench size={16} className="text-[oklch(0.58_0.22_25)]" />
+                      <Wrench size={16} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)]" />
                       <h3 className="font-display text-base font-bold text-foreground uppercase tracking-wide">Tipos de Projeto</h3>
                     </div>
                     <ul className="space-y-2">
                       {disc.projectTypes.map((t) => (
                         <li key={t} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 size={12} className="text-[oklch(0.58_0.22_25)] mt-1 shrink-0" />
+                          <CheckCircle2 size={12} className="text-[oklch(0.32_0_0)] dark:text-[oklch(0.58_0.22_25)] mt-1 shrink-0" />
                           {t}
                         </li>
                       ))}
@@ -124,13 +124,13 @@ export default function Disciplines() {
                 <ScrollReveal delay={0.1}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-2 mb-4">
-                      <FileText size={16} className="text-[oklch(0.8_0.16_75)]" />
+                      <FileText size={16} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)]" />
                       <h3 className="font-display text-base font-bold text-foreground uppercase tracking-wide">Entregáveis</h3>
                     </div>
                     <ul className="space-y-2">
                       {disc.deliverables.map((d) => (
                         <li key={d} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 size={12} className="text-[oklch(0.8_0.16_75)] mt-1 shrink-0" />
+                          <CheckCircle2 size={12} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)] mt-1 shrink-0" />
                           {d}
                         </li>
                       ))}
@@ -142,13 +142,13 @@ export default function Disciplines() {
                 <ScrollReveal delay={0.2}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-2 mb-4">
-                      <Shield size={16} className="text-[oklch(0.7_0.17_155)]" />
+                      <Shield size={16} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                       <h3 className="font-display text-base font-bold text-foreground uppercase tracking-wide">Normas Técnicas</h3>
                     </div>
                     <ul className="space-y-2">
                       {disc.standards.map((s) => (
                         <li key={s} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 size={12} className="text-[oklch(0.7_0.17_155)] mt-1 shrink-0" />
+                          <CheckCircle2 size={12} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)] mt-1 shrink-0" />
                           {s}
                         </li>
                       ))}
@@ -163,8 +163,8 @@ export default function Disciplines() {
                   <h3 className="font-display text-lg font-bold text-foreground mb-6 uppercase tracking-wide">Etapas de Execução</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {disc.stages.map((stage, i) => (
-                      <div key={stage} className="flex items-start gap-3 p-3 rounded-sm bg-[oklch(0.14_0.01_270/0.5)]">
-                        <span className="font-mono text-lg font-bold text-[oklch(0.58_0.22_25/0.4)] shrink-0">
+                      <div key={stage} className="flex items-start gap-3 p-3 rounded-sm bg-[oklch(0.93_0_0/0.5)] dark:bg-[oklch(0.14_0.01_270/0.5)]">
+                        <span className="font-mono text-lg font-bold text-[oklch(0.32_0_0/0.4)] dark:text-[oklch(0.58_0.22_25/0.4)] shrink-0">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <span className="text-sm text-muted-foreground">{stage}</span>
@@ -179,7 +179,7 @@ export default function Disciplines() {
                 <ScrollReveal delay={0}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-2 mb-3">
-                      <AlertTriangle size={16} className="text-[oklch(0.8_0.16_75)]" />
+                      <AlertTriangle size={16} className="text-[oklch(0.50_0_0)] dark:text-[oklch(0.8_0.16_75)]" />
                       <h3 className="font-display text-base font-bold text-foreground uppercase tracking-wide">Mitigação de Riscos</h3>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{disc.riskMitigation}</p>
@@ -188,7 +188,7 @@ export default function Disciplines() {
                 <ScrollReveal delay={0.1}>
                   <div className="p-6 rounded-sm glass-panel glow-border h-full">
                     <div className="flex items-center gap-2 mb-3">
-                      <Shield size={16} className="text-[oklch(0.7_0.17_155)]" />
+                      <Shield size={16} className="text-[oklch(0.42_0_0)] dark:text-[oklch(0.7_0.17_155)]" />
                       <h3 className="font-display text-base font-bold text-foreground uppercase tracking-wide">Tratamento de Compliance</h3>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{disc.complianceHandling}</p>
@@ -203,8 +203,8 @@ export default function Disciplines() {
                     <h3 className="font-display text-lg font-bold text-foreground mb-4 uppercase tracking-wide">Perguntas Frequentes</h3>
                     <Accordion type="single" collapsible className="w-full">
                       {disc.faqs.map((faq, i) => (
-                        <AccordionItem key={i} value={`faq-${i}`} className="border-[oklch(0.25_0.01_270/0.5)]">
-                          <AccordionTrigger className="text-sm text-foreground hover:text-[oklch(0.58_0.22_25)] font-medium py-4">
+                        <AccordionItem key={i} value={`faq-${i}`} className="border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)]">
+                          <AccordionTrigger className="text-sm text-foreground hover:text-[oklch(0.32_0_0)] dark:hover:text-[oklch(0.58_0.22_25)] font-medium py-4">
                             {faq.q}
                           </AccordionTrigger>
                           <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
@@ -221,7 +221,7 @@ export default function Disciplines() {
               <ScrollReveal className="mt-10 text-center">
                 <Link
                   href="/contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.50_0.20_25)] transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-[oklch(0.32_0_0)] dark:bg-[oklch(0.58_0.22_25)] text-white rounded-sm hover:bg-[oklch(0.22_0_0)] dark:hover:bg-[oklch(0.50_0.20_25)] transition-all"
                 >
                   Solicitar Proposta para {disc.title}
                   <ArrowRight size={16} />
