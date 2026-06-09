@@ -11,6 +11,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const isHome = location === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -28,7 +29,9 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-[oklch(0.95_0_0/0.85)] dark:bg-[oklch(0.13_0.01_270/0.85)] backdrop-blur-xl border-b border-[oklch(0.84_0_0/0.5)] dark:border-[oklch(0.25_0.01_270/0.5)]"
-            : "bg-transparent"
+            : isHome
+              ? "bg-[oklch(0.95_0_0/0.85)] backdrop-blur-xl border-b border-[oklch(0.84_0_0/0.5)] dark:bg-transparent dark:border-transparent dark:backdrop-blur-none"
+              : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
