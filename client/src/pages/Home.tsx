@@ -67,8 +67,8 @@ export default function Home() {
               className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] text-white mb-6"
             >
               Engenharia com{" "}
-              <span className="text-gradient-red">controle</span>,{" "}
-              <span className="text-gradient-amber">precisão</span>{" "}
+              <span className="hero-accent-red">controle</span>,{" "}
+              <span className="hero-accent-amber">precisão</span>{" "}
               e rastreabilidade
             </motion.h1>
 
