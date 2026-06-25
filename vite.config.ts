@@ -205,6 +205,58 @@ function viteApiSendProposalPlugin(): Plugin {
           }
         });
       });
+
+      // /api/chat — espelha a serverless function do assistente virtual (api/chat.ts)
+      server.middlewares.use("/api/chat", async (req, res, next) => {
+        if (req.method === "OPTIONS") {
+          res.statusCode = 204;
+          res.setHeader("Access-Control-Allow-Origin", "*");
+          res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+          res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+          res.end();
+          return;
+        }
+        if (req.method !== "POST") {
+          return next();
+        }
+
+        let raw = "";
+        req.on("data", (chunk) => {
+          raw += chunk.toString();
+        });
+        req.on("end", async () => {
+          try {
+            const body = raw ? JSON.parse(raw) : {};
+            const { default: chatHandler } = await import("./api/chat");
+            const reqAdapter = { method: "POST", body };
+            const resAdapter = {
+              status(code: number) {
+                res.statusCode = code;
+                return resAdapter;
+              },
+              json(obj: any) {
+                res.setHeader("Content-Type", "application/json");
+                res.setHeader("Access-Control-Allow-Origin", "*");
+                res.end(JSON.stringify(obj));
+                return resAdapter;
+              },
+              setHeader(k: string, v: string) {
+                res.setHeader(k, v);
+                return resAdapter;
+              },
+              end(b?: any) {
+                res.end(b);
+                return resAdapter;
+              },
+            };
+            await chatHandler(reqAdapter as any, resAdapter as any);
+          } catch (e: any) {
+            res.statusCode = 500;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({ ok: false, error: `Erro no chat: ${e?.message || e}` }));
+          }
+        });
+      });
     },
   };
 }
