@@ -187,7 +187,7 @@ function viteApiSendProposalPlugin(): Plugin {
         req.on("end", async () => {
           try {
             const payload = raw ? JSON.parse(raw) : {};
-            const { sendProposalEmail } = await import("./api/_brevo");
+            const { sendProposalEmail } = await import("./api/send-proposal");
             const result = await sendProposalEmail(payload);
             res.setHeader("Content-Type", "application/json");
             res.setHeader("Access-Control-Allow-Origin", "*");
