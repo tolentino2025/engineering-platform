@@ -22,7 +22,14 @@ export type ProposalPayload = {
   telefone?: string;
   disciplina?: string;
   descricao?: string;
+  /** Honeypot: campo invisível no formulário; humanos deixam vazio. */
+  website?: string;
+  /** Tempo (ms) entre abrir o formulário e enviar, medido no navegador. */
+  _elapsed?: number;
 };
+
+/** Envios mais rápidos que isso são considerados robôs. */
+const MIN_FILL_MS = 3000;
 
 const DISCIPLINA_LABEL: Record<string, string> = {
   fire: "Engenharia de Incêndio",
@@ -48,6 +55,36 @@ function validate(p: ProposalPayload): string | null {
   if (!p.email || !p.email.trim()) return "E-mail é obrigatório.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) return "E-mail inválido.";
   if (!p.descricao || !p.descricao.trim()) return "Descrição do projeto é obrigatória.";
+  return null;
+}
+
+/**
+ * Texto de uma palavra só, longo, com maiúsculas espalhadas no meio
+ * (ex.: "mmKUpIQSAfCRXtRKWyVETCr") — padrão típico de bots.
+ */
+function looksRandom(value?: string): boolean {
+  const s = (value || "").trim();
+  if (s.length < 12 || /\s/.test(s) || !/^[A-Za-z]+$/.test(s)) return false;
+  if (!/[a-z]/.test(s)) return false;
+  const innerUpper = s.slice(1).replace(/[^A-Z]/g, "").length;
+  return innerUpper >= 3;
+}
+
+/** Gmail com muitos pontos no usuário (ex.: "j.o.h.n.o@gmail.com"). */
+function isDottedGmail(email?: string): boolean {
+  const m = /^([^@]+)@(gmail|googlemail)\.com$/i.exec((email || "").trim());
+  return !!m && (m[1].match(/\./g) || []).length >= 4;
+}
+
+/** Retorna o motivo se o envio parecer spam, ou null se parecer legítimo. */
+function detectSpam(p: ProposalPayload): string | null {
+  if (p.website && String(p.website).trim()) return "honeypot preenchido";
+  const elapsed = Number(p._elapsed);
+  if (!Number.isFinite(elapsed)) return "sem marcador de tempo";
+  if (elapsed < MIN_FILL_MS) return `enviado em ${elapsed}ms`;
+  const signals =
+    [p.nome, p.empresa, p.descricao].filter(looksRandom).length + (isDottedGmail(p.email) ? 1 : 0);
+  if (signals >= 2) return "texto aleatório";
   return null;
 }
 
@@ -112,6 +149,13 @@ export async function sendProposalEmail(payload: ProposalPayload): Promise<
   const validationError = validate(payload);
   if (validationError) {
     return { ok: false, status: 400, error: validationError };
+  }
+
+  // Spam: responde sucesso sem enviar, para o robô não ajustar o ataque.
+  const spamReason = detectSpam(payload);
+  if (spamReason) {
+    console.warn(`[send-proposal] spam descartado (${spamReason}): ${payload.email}`);
+    return { ok: true };
   }
 
   const senderEmail = process.env.BREVO_SENDER_EMAIL || "contato@jonel.eng.br";

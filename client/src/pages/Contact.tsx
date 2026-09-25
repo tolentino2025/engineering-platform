@@ -2,7 +2,7 @@
    DESIGN: Dark Industrial Command Center
    CONTACT PAGE
    ============================================================ */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import PageLayout from "@/components/PageLayout";
@@ -32,6 +32,9 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
+  // Anti-spam: momento em que o formulário foi aberto e campo honeypot (invisível).
+  const startedAt = useRef(Date.now());
+  const [website, setWebsite] = useState("");
 
   const updateField = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -44,7 +47,7 @@ export default function Contact() {
       const res = await fetch("/api/send-proposal", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, website, _elapsed: Date.now() - startedAt.current }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data?.ok) {
@@ -122,6 +125,20 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Honeypot anti-spam: invisível para pessoas, robôs costumam preencher */}
+                    <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+                      <label>
+                        Website
+                        <input
+                          type="text"
+                          name="website"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          value={website}
+                          onChange={(e) => setWebsite(e.target.value)}
+                        />
+                      </label>
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-1.5">Nome</label>
